@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: configure (debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--preset", "debug"],
+            "options": {
+                "env": {
+                    "PATH": "C:\\Qt\\Tools\\Ninja;C:\\Qt\\Tools\\mingw1310_64\\bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Strata (debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "--preset", "debug"],
+            "options": {
+                "env": {
+                    "PATH": "C:\\Qt\\Tools\\Ninja;C:\\Qt\\Tools\\mingw1310_64\\bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "CMake: configure (debug)",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build Strata (release)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--preset", "release", "--build", "--preset", "release"],
+            "options": {
+                "env": {
+                    "PATH": "C:\\Qt\\Tools\\Ninja;C:\\Qt\\Tools\\mingw1310_64\\bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
