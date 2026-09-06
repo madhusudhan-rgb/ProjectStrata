@@ -8,6 +8,8 @@ qt_standard_project_setup()
 qt_add_executable(Strata
     WIN32 MACOSX_BUNDLE
     main.cpp
+    terminal.h
+    terminal.cpp
 
 
 
