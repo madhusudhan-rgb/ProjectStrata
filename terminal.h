@@ -2,6 +2,7 @@
 
 #include <QPlainTextEdit>
 #include <QProcess>
+#include <QStringList>
 
 class Terminal : public QPlainTextEdit
 {
@@ -16,5 +17,10 @@ private:
     QProcess *process;
     int promptPosition = 0;
 
+    QStringList history;
+    int historyIndex = 0;
+
+    void appendOutput(const QString &output);
+    void showHistory(int direction);
     void sendCommand();
 };

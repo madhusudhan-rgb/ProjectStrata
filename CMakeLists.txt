@@ -10,6 +10,12 @@ qt_add_executable(Strata
     main.cpp
     terminal.h
     terminal.cpp
+    explorer.h
+    explorer.cpp
+    codeeditor.h
+    codeeditor.cpp
+    highlighter.h
+    highlighter.cpp
 
 
 
